@@ -1,4 +1,4 @@
-import { SolutionFx } from "../../utils/contract";
+import { SolutionFn } from "../../utils/contract";
 
 const RED_CUBES = 12;
 const GREEN_CUBES = 13;
@@ -9,7 +9,7 @@ const GAME_SET_REGEX = /(\d+) (red|green|blue)/g;
 
 type Color = "red" | "green" | "blue";
 
-const solution: SolutionFx = async (input: string[]) => {
+const solution: SolutionFn = async (input: string[]) => {
   let possibleGameIndexesSum = 0;
 
   input.forEach((line) => {

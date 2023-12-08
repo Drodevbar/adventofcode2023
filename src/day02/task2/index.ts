@@ -1,10 +1,10 @@
-import { SolutionFx } from "../../utils/contract";
+import { SolutionFn } from "../../utils/contract";
 
 const GAME_SET_REGEX = /(\d+) (red|green|blue)/g;
 
 type Color = "red" | "green" | "blue";
 
-const solution: SolutionFx = async (input: string[]) => {
+const solution: SolutionFn = async (input: string[]) => {
   let powerOfSetsOfCubes = 0;
 
   input.forEach((line) => {

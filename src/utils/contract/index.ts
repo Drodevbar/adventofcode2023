@@ -1,1 +1,1 @@
-export type SolutionFx = (input: string[]) => Promise<string>;
+export type SolutionFn = (input: string[]) => Promise<string>;

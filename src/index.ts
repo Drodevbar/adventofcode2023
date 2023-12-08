@@ -1,6 +1,6 @@
 import path from "node:path";
 import { readInput } from "./utils/read-input";
-import { SolutionFx } from "./utils/contract";
+import { SolutionFn } from "./utils/contract";
 
 (async () => {
   const dayNumber = process.argv
@@ -21,12 +21,12 @@ import { SolutionFx } from "./utils/contract";
   const input = await readInput(inputPath);
 
   const solutionFxPath = path.resolve(process.cwd(), `src/day${dayNumber}/task${taskNumber}/index.ts`);
-  const { default: solutionFx } = (await import(solutionFxPath)) as { default: SolutionFx };
+  const { default: solutionFn } = (await import(solutionFxPath)) as { default: SolutionFn };
 
   console.log(`Solving task ${taskNumber} for day ${dayNumber}...`);
 
   const timerStart = Date.now();
-  const answer = await solutionFx(input);
+  const answer = await solutionFn(input);
   const timerStop = Date.now();
 
   console.log(`Answer: ${answer}`);
